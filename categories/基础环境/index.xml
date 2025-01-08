@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>汤庆飞-全栈技术博客</title>
-        <link>https://example.com/</link>
-        <description>Recent content on 汤庆飞-全栈技术博客</description>
+        <title>基础环境 on 汤庆飞-全栈技术博客</title>
+        <link>https://example.com/categories/%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83/</link>
+        <description>Recent content in 基础环境 on 汤庆飞-全栈技术博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>云视角科技有限公司</copyright>
-        <lastBuildDate>Wed, 08 Jan 2025 14:45:11 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Jan 2025 14:45:11 +0800</lastBuildDate><atom:link href="https://example.com/categories/%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Git基础用法</title>
         <link>https://example.com/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
         <pubDate>Wed, 08 Jan 2025 14:45:11 +0800</pubDate>
@@ -67,83 +67,6 @@ fatal: unable to access &amp;lsquo;&lt;a class=&#34;link&#34; href=&#34;https://
 </description>
         </item>
         <item>
-        <title>使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流</title>
-        <link>https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</link>
-        <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</guid>
-        <description>&lt;h3 id=&#34;一-服务器环境准备&#34;&gt;一. 服务器环境准备
-&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;CentOs:    CentOS Linux release 7.9.2009 (Core)&lt;br&gt;
-nginx：1.29&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;二-编译nginx所需的基础环境和下载nginx源码包&#34;&gt;二. 编译nginx所需的基础环境和下载nginx源码包
-&lt;/h3&gt;&lt;h4 id=&#34;安装基础环境&#34;&gt;安装基础环境
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;yum install gcc -y
-yum install pcre pcre-devel -y
-yum install openssl openssl-devel -y
-yum install wget -y
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;下载nginx和nginx-http-flv-module源码包&#34;&gt;下载nginx和nginx-http-flv-module源码包
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;mkdir -p /opt/backup/docker-build/nginx-flv/nginx-src
-cd /opt/backup/docker-build/nginx-flv/nginx-src
-wget http://nginx.org/download/nginx-1.27.2.tar.gz
-
-tar -zxf nginx-nginx-1.27.2.tar.gz
-git clone https://github.com/winshining/nginx-http-flv-module.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;编译安装完成后会安装在usrlocalnginx-flv-rtmp下&#34;&gt;编译安装，完成后会安装在/usr/local/nginx-flv-rtmp下
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;./configure --prefix=/usr/local/nginx-flv-rtmp --with-http_ssl_module --with-http_secure_link_module --add-module=nginx-http-flv-module
-make 
-make install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果安装过程中出现库文件找不到的情况，网上搜索即可解决，如需要安装pcre2&lt;br&gt;
-&lt;code&gt;yum install pcre2&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;三-nginx配置&#34;&gt;三. nginx配置
-&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;#user  nobody;
-worker_processes  auto;
-
-#error_log  logs/error.log;
-#error_log  logs/error.log  notice;
-#error_log  logs/error.log  info;
-
-error_log  logs/error.log warn;
-pid        logs/nginx.pid;
-
-
-events {
-    worker_connections  10240;
-    use epoll;
-    multi_accept on;
-}
-
-
-rtmp {
-    server {
-        listen 1935;
-        chunk_size 4096;
-
-        application live {
-            live on;
-            record off;
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;四-启动nginx服务&#34;&gt;四. 启动nginx服务
-&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;/usr/local/nginx-flv-rtmp/sbin/nginx -t
-/usr/local/nginx-flv-rtmp/sbin/nginx -c /usr/local/nginx-flv-rtmp/conf/nginx.conf
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;五-测试推拉流&#34;&gt;五. 测试推拉流
-&lt;/h3&gt;&lt;h4 id=&#34;本地推流到服务器&#34;&gt;本地推流到服务器
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;ffmpeg -use_wallclock_as_timestamps 1 -rtsp_transport tcp -i &amp;quot;rtsp://admin:123456@192.168.1.108:554/cam/realmonitor?channel=1&amp;amp;subtype=0&amp;amp;unicast=true&amp;amp;proto=Onvif&amp;quot; -c:v copy -c:a aac -f flv rtmp://106.14.xx.xxx/live/stream
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;客户端vlc输入如下地址拉流&#34;&gt;客户端VLC输入如下地址拉流
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;rtmp://106.14.xx.xxx/live/stream
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-        </item>
-        <item>
         <title>下载离线python包</title>
         <link>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</link>
         <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
@@ -195,100 +118,6 @@ rtmp {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;安装过程中如果提示缺少依赖则继续在联网机器上下载安装包然后传输的离线机器直到安装完成&#34;&gt;安装过程中如果提示缺少依赖，则继续在联网机器上下载安装包，然后传输的离线机器，直到安装完成
 &lt;/h3&gt;</description>
-        </item>
-        <item>
-        <title>基于Python实现的T-SNE(T-分布随机邻嵌入)算法</title>
-        <link>https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</link>
-        <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</guid>
-        <description>&lt;img src="https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut.jpg" alt="Featured image of post 基于Python实现的T-SNE(T-分布随机邻嵌入)算法" /&gt;&lt;p&gt;tsne(t-分布随机邻嵌入)是基于Python实现的降维算法，用于高维数据的可视化技术，将高维数据映射到低维空间（通常是二维或三维）以便于观察。&lt;br&gt;
-本文将对tsne代码进行讲解，获取源码请点击：&lt;a class=&#34;link&#34; href=&#34;https://github.com/qingfeitang/tsne.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/qingfeitang/tsne.git&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;功能&#34;&gt;功能
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;降维&lt;/strong&gt;：将高维特征向量数据降维为二维，通过散点图进行可视化。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;输入数据处理&lt;/strong&gt;：加载特征文件和目标文件，运行t-SNE后保存结果。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;可视化&lt;/strong&gt;：根据目标类别（targets）对降维后的点着色并保存图片。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;函数解析&#34;&gt;函数解析
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;Hbeta(D, beta)&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;计算基于高斯分布的熵（H）和条件概率向量（P）。&lt;/li&gt;
-&lt;li&gt;输入距离矩阵的一行（D）以及β（高斯分布的精度），返回与某一指定精度的概率分布和熵。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;通过高斯核计算相邻点的条件概率分布：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;P = np.exp(-D.copy() * beta)
-H = np.log(sumP) + beta * np.sum(D * P) / sumP
-P = P / sumP
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;code&gt;x2p(X, tol, perplexity)&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;通过二分搜索优化每个点的高斯核宽度，使其满足指定的困惑度（perplexity）。&lt;/li&gt;
-&lt;li&gt;生成数据点之间的条件概率矩阵P。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;计算欧式距离的平方：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;D = np.add(np.add(-2 * np.dot(X, X.T), sum_X).T, sum_X)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;根据误差动态调整高斯分布的宽度：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;while np.abs(Hdiff) &amp;gt; tol and tries &amp;lt; 50:
-    if Hdiff &amp;gt; 0:  # 如果熵大于目标值，调整β值
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;code&gt;pca(X, no_dims)&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;对输入数据X进行PCA（主成分分析），降维至指定维度。&lt;/li&gt;
-&lt;li&gt;t-SNE可以选用PCA作为数据的初步降维步骤。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;通过协方差矩阵特征分解提取主成分:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;(l, M) = np.linalg.eig(np.dot(X.T, X))
-Y = np.dot(X, M[:, 0:no_dims])
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;&lt;code&gt;tsne(X, no_dims, initial_dims, perplexity)&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;实现t-SNE算法，将输入数据降维至低维。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;计算高维空间的条件概率矩阵：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;P = x2p(X, 1e-5, perplexity)
-P = P + np.transpose(P)
-P = P / np.sum(P)
-P = P * 4. 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;基于梯度下降更新坐标，使低纬度分布与高维分布接近：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;for iter in range(max_iter):
-    num = 1. / (1. + np.add(np.add(-2. * np.dot(Y, Y.T), sum_Y).T, sum_Y))
-    Q = num / np.sum(num)
-    PQ = P - Q
-    dY[i, :] = ...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;实践分析&#34;&gt;实践分析
-&lt;/h3&gt;&lt;p&gt;基于火灾数据集我们训练了3个分类模型，并在2000条测试集上面通过tsne算法做了可视化展示，效果如下：&lt;br&gt;
-&lt;img src=&#34;https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2.jpg&#34;
-	width=&#34;1466&#34;
-	height=&#34;743&#34;
-	srcset=&#34;https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu2207856159236137155.jpg 480w, https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu4078315072322567694.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;tsne可视化效果图&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;197&#34;
-		data-flex-basis=&#34;473px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;从图中可以看出，模型能够有效区分正样本和负样本，且正负样本之间的间隔（margin）较大，这表明模型在类别区分性方面表现较好。&lt;/li&gt;
-&lt;li&gt;根据可视化结果定位到误报的图像，可以看出干扰数据主要是夜间的灯光，进而对模型重点迭代优化此类数据即可。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
         </item>
         <item>
         <title>ubuntu挂载windows目录</title>
@@ -469,66 +298,6 @@ config.set_flag(trt.BuilderFlag.INT8)
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;四-再次查看时间date--r已经修改为北京时间&#34;&gt;四. 再次查看时间date -R，已经修改为北京时间
 &lt;/h3&gt;</description>
-        </item>
-        <item>
-        <title>Archives</title>
-        <link>https://example.com/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Links</title>
-        <link>https://example.com/links/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/links/</guid>
-        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
-&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Search</title>
-        <link>https://example.com/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/search/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>关于</title>
-        <link>https://example.com/%E5%85%B3%E4%BA%8E/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://example.com/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
-</description>
         </item>
         
     </channel>

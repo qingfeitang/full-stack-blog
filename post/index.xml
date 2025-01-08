@@ -7,6 +7,469 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>云视角科技有限公司</copyright>
-        <lastBuildDate></lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Wed, 08 Jan 2025 14:45:11 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git基础用法</title>
+        <link>https://example.com/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
+        <pubDate>Wed, 08 Jan 2025 14:45:11 +0800</pubDate>
+        
+        <guid>https://example.com/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
+        <description>&lt;h2 id=&#34;git基本用法&#34;&gt;git基本用法
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. git init                          创建本地仓库
+2. git add .                         把代码从代码区添加到暂存区
+3. git commit -m &amp;quot;第一次提交代码&amp;quot;     从暂存区提交到本地仓库
+4. git status                        查看git此时的提交状态
+5. git log                           查看提交记录
+6. git reset --hard HEAD-n           回退到上n个版本
+7. git reflog                        查看操作记录
+8. git reset --hard 6位版本号         回退到指定版本
+9. git remote add origin https://gitee.com/qingfeitang/life-progress-bar.git  添加远程仓库地址
+10. git push origin master           推送到远程仓库
+11. git clone https://gitee.com/qingfeitang/life-progress-bar.git  克隆仓库
+12. git pull origin master           拉取服务器代码与本地代码合并（本地提交后在拉取）
+
+13. git branch -a                    查看所有分支
+14. git checkout -b devkerwin        创建新的分支
+15. git checkout master              切换分支
+16. git merge devkerwin              合并分支
+17. git push origin devkerwin        将分支推送到远程分支
+18. git push origin :devkerwin       删除远程分支
+19. git branch -d devkerwin          删除本地分支（先切换到master分支在执行）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;git配置全局代理&#34;&gt;git配置全局代理
+&lt;/h2&gt;&lt;p&gt;在使用 Git 时，如果需要通过代理访问远程仓库（例如解决因网络限制无法访问 GitHub 的问题），可以配置HTTP/HTTPS代理。&lt;/p&gt;
+&lt;p&gt;设置HTTP/HTTPS代理&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config --global http.proxy http://proxy_url:port
+git config --global https.proxy http://proxy_url:port
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;验证配置是否生效&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config --global --get http.proxy
+git config --global --get https.proxy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;清除代理配置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config --global --unset http.proxy
+git config --global --unset https.proxy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;清除或替换git旧凭据&#34;&gt;清除或替换git旧凭据
+&lt;/h2&gt;&lt;p&gt;现象：当我执行git push origin main的时候，报如下错误：remote: Permission to qingfeitang/tsne.git denied to qftang001.
+fatal: unable to access &amp;lsquo;&lt;a class=&#34;link&#34; href=&#34;https://github.com/qingfeitang/tsne.git/%27&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/qingfeitang/tsne.git/&#39;&lt;/a&gt;: The requested URL returned error: 403&lt;br&gt;
+原因：使用 HTTPS 时，GitHub 会要求你进行身份验证。如果你的本地配置保存了错误或者旧的凭据，可能会导致权限错误。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;清除旧凭据&lt;br&gt;
+&lt;code&gt;git config --system --unset credential.helper&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;为 Git 设置正确的用户名和邮箱&lt;br&gt;
+&lt;code&gt;git config --global user.name &amp;quot;Your GitHub Username&amp;quot;&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;git config --global user.email &amp;quot;Your GitHub Email&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;更新凭据：当再次git push时，Git会要求输入用户名和密码。GitHub 最近要求使用 Personal Access Token（PAT） 而不是密码，因此确保使用正确的 GitHub 个人访问令牌。
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/settings/tokens&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub 个人访问令牌管理页面&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流</title>
+        <link>https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</link>
+        <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</guid>
+        <description>&lt;h3 id=&#34;一-服务器环境准备&#34;&gt;一. 服务器环境准备
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;CentOs:    CentOS Linux release 7.9.2009 (Core)&lt;br&gt;
+nginx：1.29&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;二-编译nginx所需的基础环境和下载nginx源码包&#34;&gt;二. 编译nginx所需的基础环境和下载nginx源码包
+&lt;/h3&gt;&lt;h4 id=&#34;安装基础环境&#34;&gt;安装基础环境
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;yum install gcc -y
+yum install pcre pcre-devel -y
+yum install openssl openssl-devel -y
+yum install wget -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;下载nginx和nginx-http-flv-module源码包&#34;&gt;下载nginx和nginx-http-flv-module源码包
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;mkdir -p /opt/backup/docker-build/nginx-flv/nginx-src
+cd /opt/backup/docker-build/nginx-flv/nginx-src
+wget http://nginx.org/download/nginx-1.27.2.tar.gz
+
+tar -zxf nginx-nginx-1.27.2.tar.gz
+git clone https://github.com/winshining/nginx-http-flv-module.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;编译安装完成后会安装在usrlocalnginx-flv-rtmp下&#34;&gt;编译安装，完成后会安装在/usr/local/nginx-flv-rtmp下
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;./configure --prefix=/usr/local/nginx-flv-rtmp --with-http_ssl_module --with-http_secure_link_module --add-module=nginx-http-flv-module
+make 
+make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果安装过程中出现库文件找不到的情况，网上搜索即可解决，如需要安装pcre2&lt;br&gt;
+&lt;code&gt;yum install pcre2&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;三-nginx配置&#34;&gt;三. nginx配置
+&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;#user  nobody;
+worker_processes  auto;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+error_log  logs/error.log warn;
+pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  10240;
+    use epoll;
+    multi_accept on;
+}
+
+
+rtmp {
+    server {
+        listen 1935;
+        chunk_size 4096;
+
+        application live {
+            live on;
+            record off;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;四-启动nginx服务&#34;&gt;四. 启动nginx服务
+&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;/usr/local/nginx-flv-rtmp/sbin/nginx -t
+/usr/local/nginx-flv-rtmp/sbin/nginx -c /usr/local/nginx-flv-rtmp/conf/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;五-测试推拉流&#34;&gt;五. 测试推拉流
+&lt;/h3&gt;&lt;h4 id=&#34;本地推流到服务器&#34;&gt;本地推流到服务器
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;ffmpeg -use_wallclock_as_timestamps 1 -rtsp_transport tcp -i &amp;quot;rtsp://admin:123456@192.168.1.108:554/cam/realmonitor?channel=1&amp;amp;subtype=0&amp;amp;unicast=true&amp;amp;proto=Onvif&amp;quot; -c:v copy -c:a aac -f flv rtmp://106.14.xx.xxx/live/stream
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;客户端vlc输入如下地址拉流&#34;&gt;客户端VLC输入如下地址拉流
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;rtmp://106.14.xx.xxx/live/stream
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        <item>
+        <title>下载离线python包</title>
+        <link>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</link>
+        <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</guid>
+        <description>&lt;p&gt;要在离线机器上安装 Python 的第三方包，可以按照以下步骤在联网机器上下载所需的包及其依赖项，然后复制到离线机器上进行安装。&lt;/p&gt;
+&lt;h3 id=&#34;在联网机器上下载包&#34;&gt;在联网机器上下载包
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;创建一个新目录来存放下载的包：&lt;br&gt;
+&lt;code&gt;mkdir /path/to/packages&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;pip download 命令下载包及其依赖项。假设你要下载 requests 包：&lt;br&gt;
+&lt;code&gt;pip download requests -d /path/to/packages&lt;/code&gt;&lt;br&gt;
+这将下载 requests 及其所有依赖项到指定的目录 /path/to/packages。&lt;/li&gt;
+&lt;li&gt;如果你有多个包需要下载，可以将它们列在一个requirements.txt 文件中，然后使用以下命令:&lt;br&gt;
+&lt;code&gt;pip download -r requirements.txt -d /path/to/packages&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;将包拷贝到离线机器&#34;&gt;将包拷贝到离线机器
+&lt;/h3&gt;&lt;p&gt;使用 USB 闪存驱动器、外部硬盘或通过局域网共享文件夹将 /path/to/packages 目录拷贝到离线机器。&lt;/p&gt;
+&lt;h3 id=&#34;在离线机器上安装包&#34;&gt;在离线机器上安装包
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在离线机器上，打开命令行，进入包含下载包的目录：&lt;br&gt;
+&lt;code&gt;cd /path/to/packages&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用pip install 命令安装包：&lt;br&gt;
+&lt;code&gt;pip install --no-index --find-links=. requests&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果有多个包需要安装，可以使用以下命令：&lt;br&gt;
+&lt;code&gt;pip install --no-index --find-links=. -r requirements.txt&lt;/code&gt;&lt;br&gt;
+这将从本地目录中根据 requirements.txt 文件安装所有包。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;注意事项&#34;&gt;注意事项
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;确保联网机器和离线机器上的 Python 版本相同或兼容。&lt;/li&gt;
+&lt;li&gt;使用相同的操作系统版本（例如，Windows 和 Linux 的包可能不兼容）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样，你就可以在离线环境中安装 Python 的第三方包了。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>ubuntu安装包离线安装</title>
+        <link>https://example.com/p/ubuntu%E5%AE%89%E8%A3%85%E5%8C%85%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/ubuntu%E5%AE%89%E8%A3%85%E5%8C%85%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</guid>
+        <description>&lt;h3 id=&#34;保证联网机器和离线机器相同的操作系统&#34;&gt;保证联网机器和离线机器相同的操作系统
+&lt;/h3&gt;&lt;h3 id=&#34;在有网机器上下载离线安装包&#34;&gt;在有网机器上下载离线安装包
+&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;apt-get download package_name  &amp;amp;&amp;amp; apt-cache depends -i package_name  | awk &#39;/Depends:/ {print $2}&#39; | xargs  apt-get download
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;将下载的离线安装包传输到离线机器执行下面命令安装&#34;&gt;将下载的离线安装包传输到离线机器，执行下面命令安装
+&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;dpkg -i --force-overwrite --force-depends *.deb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;安装过程中如果提示缺少依赖则继续在联网机器上下载安装包然后传输的离线机器直到安装完成&#34;&gt;安装过程中如果提示缺少依赖，则继续在联网机器上下载安装包，然后传输的离线机器，直到安装完成
+&lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>基于Python实现的T-SNE(T-分布随机邻嵌入)算法</title>
+        <link>https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</link>
+        <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</guid>
+        <description>&lt;img src="https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut.jpg" alt="Featured image of post 基于Python实现的T-SNE(T-分布随机邻嵌入)算法" /&gt;&lt;p&gt;tsne(t-分布随机邻嵌入)是基于Python实现的降维算法，用于高维数据的可视化技术，将高维数据映射到低维空间（通常是二维或三维）以便于观察。&lt;br&gt;
+本文将对tsne代码进行讲解，获取源码请点击：&lt;a class=&#34;link&#34; href=&#34;https://github.com/qingfeitang/tsne.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/qingfeitang/tsne.git&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;功能&#34;&gt;功能
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;降维&lt;/strong&gt;：将高维特征向量数据降维为二维，通过散点图进行可视化。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;输入数据处理&lt;/strong&gt;：加载特征文件和目标文件，运行t-SNE后保存结果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可视化&lt;/strong&gt;：根据目标类别（targets）对降维后的点着色并保存图片。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;函数解析&#34;&gt;函数解析
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Hbeta(D, beta)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;计算基于高斯分布的熵（H）和条件概率向量（P）。&lt;/li&gt;
+&lt;li&gt;输入距离矩阵的一行（D）以及β（高斯分布的精度），返回与某一指定精度的概率分布和熵。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过高斯核计算相邻点的条件概率分布：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;P = np.exp(-D.copy() * beta)
+H = np.log(sumP) + beta * np.sum(D * P) / sumP
+P = P / sumP
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;x2p(X, tol, perplexity)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;通过二分搜索优化每个点的高斯核宽度，使其满足指定的困惑度（perplexity）。&lt;/li&gt;
+&lt;li&gt;生成数据点之间的条件概率矩阵P。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;计算欧式距离的平方：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D = np.add(np.add(-2 * np.dot(X, X.T), sum_X).T, sum_X)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据误差动态调整高斯分布的宽度：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;while np.abs(Hdiff) &amp;gt; tol and tries &amp;lt; 50:
+    if Hdiff &amp;gt; 0:  # 如果熵大于目标值，调整β值
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;code&gt;pca(X, no_dims)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;对输入数据X进行PCA（主成分分析），降维至指定维度。&lt;/li&gt;
+&lt;li&gt;t-SNE可以选用PCA作为数据的初步降维步骤。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过协方差矩阵特征分解提取主成分:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(l, M) = np.linalg.eig(np.dot(X.T, X))
+Y = np.dot(X, M[:, 0:no_dims])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;code&gt;tsne(X, no_dims, initial_dims, perplexity)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;实现t-SNE算法，将输入数据降维至低维。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;计算高维空间的条件概率矩阵：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;P = x2p(X, 1e-5, perplexity)
+P = P + np.transpose(P)
+P = P / np.sum(P)
+P = P * 4. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;基于梯度下降更新坐标，使低纬度分布与高维分布接近：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;for iter in range(max_iter):
+    num = 1. / (1. + np.add(np.add(-2. * np.dot(Y, Y.T), sum_Y).T, sum_Y))
+    Q = num / np.sum(num)
+    PQ = P - Q
+    dY[i, :] = ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;实践分析&#34;&gt;实践分析
+&lt;/h3&gt;&lt;p&gt;基于火灾数据集我们训练了3个分类模型，并在2000条测试集上面通过tsne算法做了可视化展示，效果如下：&lt;br&gt;
+&lt;img src=&#34;https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2.jpg&#34;
+	width=&#34;1466&#34;
+	height=&#34;743&#34;
+	srcset=&#34;https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu2207856159236137155.jpg 480w, https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu4078315072322567694.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;tsne可视化效果图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;197&#34;
+		data-flex-basis=&#34;473px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从图中可以看出，模型能够有效区分正样本和负样本，且正负样本之间的间隔（margin）较大，这表明模型在类别区分性方面表现较好。&lt;/li&gt;
+&lt;li&gt;根据可视化结果定位到误报的图像，可以看出干扰数据主要是夜间的灯光，进而对模型重点迭代优化此类数据即可。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>ubuntu挂载windows目录</title>
+        <link>https://example.com/p/ubuntu%E6%8C%82%E8%BD%BDwindows%E7%9B%AE%E5%BD%95/</link>
+        <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/ubuntu%E6%8C%82%E8%BD%BDwindows%E7%9B%AE%E5%BD%95/</guid>
+        <description>&lt;p&gt;需求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;有些文件存在于windows目录下，文件较大不方便复制，但需要ubuntu系统操作&lt;/li&gt;
+&lt;li&gt;ubuntu加密性不好，以挂载的方式使用ubuntu系统&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;挂载方法:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;window下设置共享文件夹&lt;br&gt;
+右键待共享的文件夹 &amp;ndash;&amp;gt; 共享 &amp;ndash;&amp;gt; 共享(S) &amp;ndash;&amp;gt; 点击下拉倒三角.&lt;br&gt;
+选择共享的用户，可以新建一个用户，然后点击添加(A)，在权限级别这块改成“读取/写入”，最后点击共享&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;shortcut.jpg&#34; width=&#34;500&#34; height=&#34;350&#34;&gt;
+&lt;img src=&#34;shortcut2.jpg&#34; width=&#34;500&#34; height=&#34;250&#34;&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;ubuntu下挂载共享文件夹&lt;br&gt;
+安装cifs&lt;br&gt;
+&lt;code&gt;apt install cifs-utils&lt;/code&gt;&lt;br&gt;
+执行挂载命令 &lt;br&gt;
+&lt;code&gt;mount -t cifs -o username=&amp;quot;ubuntu&amp;quot;,password=&amp;quot;123456&amp;quot;,rw,file_mode=0777,dir_mode=0777,uid=0,gid=0 //192.168.6.184/service /home/Data/mnt/&lt;/code&gt;&lt;br&gt;
+其中:&lt;br&gt;
+username和password是windows下的用户名和密码&lt;br&gt;
+192.168.6.184 是windows的ip&lt;br&gt;
+service 是windows的共享目录&lt;br&gt;
+/home/Data/mnt/ 是ubuntu的挂载目录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;卸载共享文件夹&lt;br&gt;
+&lt;code&gt;umount /home/Data/mnt/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>Pycuda安装</title>
+        <link>https://example.com/p/pycuda%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/pycuda%E5%AE%89%E8%A3%85/</guid>
+        <description>&lt;h3 id=&#34;安装参考httpsblogcsdnnetweixin_34910922articledetails117451337ops_request_misc257b2522request255fid2522253a25221692261698167772244101902522252c2522scm2522253a2522201407131301023342522257drequest_id169226169816777224410190biz_id0utm_mediumdistributepc_search_resultnone-task-blog-2allsobaiduenddefault-1-117451337-null-null142v93chatsearcht3_2utm_term20warning3a20nvcc20not20in20path2020may20need20to20set20cuda_inc_dir20for20installation20to20succeedspm1018222630014187&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_34910922/article/details/117451337?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169226169816777224410190%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;amp;request_id=169226169816777224410190&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-117451337-null-null.142%5ev93%5echatsearchT3_2&amp;amp;utm_term=%20WARNING%3A%20nvcc%20not%20in%20path.%20%20May%20need%20to%20set%20CUDA_INC_DIR%20for%20installation%20to%20succeed.&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;安装参考&lt;/a&gt;
+&lt;/h3&gt;&lt;h3 id=&#34;安装前环境配置&#34;&gt;安装前环境配置
+&lt;/h3&gt;&lt;p&gt;使用安装CUDA的用户来操作 or 下载安装包编译，指定CUDA路径（bashrc文件里也需要有CUDA环境变量，nvcc -V有输出）&lt;br&gt;
+&lt;code&gt;export PATH=$PATH:/usr/local/cuda-11.8/bin                （指定本机CUDA路径）&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64        （指定本机CUDA路径）&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;使用pip安装&#34;&gt;使用pip安装
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;pip3 install pycuda&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;下载安装包编译&#34;&gt;下载安装包编译
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;下载pycuda压缩包：https://pypi.org/project/pycuda/#files[1] 下载pycuda压缩包&lt;/li&gt;
+&lt;li&gt;解压文件，进入到文件目录&lt;/li&gt;
+&lt;li&gt;执行python3 configure.py &amp;ndash;cuda-root=/usr/local/cuda-10.0     （本机CUDA路径）&lt;/li&gt;
+&lt;li&gt;sudo python3 setup.py install&lt;/li&gt;
+&lt;li&gt;如果第四步报错的话，还是要切换到安装CUDA的用户下面来安装&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>解决Ubuntu系统下nvidia-smi has failed的问题</title>
+        <link>https://example.com/p/%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bnvidia-smi-has-failed%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bnvidia-smi-has-failed%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;h3 id=&#34;安装dkms&#34;&gt;安装dkms
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;apt install dkms&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;查看nvidia驱动版本&#34;&gt;查看nvidia驱动版本:
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ls /usr/src | grep nvidia&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;假如nvidia版本号为4508002执行如下命令&#34;&gt;假如nvidia版本号为：450.80.02，执行如下命令
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;dkms install -m nvidia -v 450.80.02&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>tensorrt使用过程中可能碰到的问题</title>
+        <link>https://example.com/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;img src="https://example.com/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/how-it-works-inference.svg" alt="Featured image of post tensorrt使用过程中可能碰到的问题" /&gt;&lt;h3 id=&#34;问题1attributeerror-tensorrttensorrtbuilder-object-has-no-attribute-build_cuda_engine&#34;&gt;问题1：AttributeError: ‘tensorrt.tensorrt.Builder‘ object has no attribute ‘build_cuda_engine‘
+&lt;/h3&gt;&lt;p&gt;原因：tensorrt版本大于等于7时，不再使用build_cuda_engine&lt;br&gt;
+解决方案： 将&lt;code&gt;engine = builder.build_cuda_engine(network)&lt;/code&gt;替换成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;profile = builder.create_optimization_profile()
+config = builder.create_builder_config()
+config.add_optimization_profile(profile)
+engine = builder.build_engine(network, config)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;问题2attributeerror-tensorrttensorrtbuilder-object-has-no-attribute-max_workspace_size&#34;&gt;问题2：AttributeError: ‘tensorrt.tensorrt.Builder‘ object has no attribute ‘max_workspace_size‘
+&lt;/h3&gt;&lt;p&gt;原因：tensorrt8.0以上删除了max_workspace_size属性&lt;br&gt;
+解决方案： 将&lt;code&gt;builder.max_workspace_size = 1 &amp;lt;&amp;lt; 20&lt;/code&gt;替换成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;config = builder.create_builder_config()
+config.max_workspace_size = 1 &amp;lt;&amp;lt; 20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;问题3attributeerror-tensorrttensorrtbuilder-object-has-no-attribute-fp16_mode&#34;&gt;问题3：AttributeError: ‘tensorrt.tensorrt.Builder‘ object has no attribute ‘fp16_mode&#39;
+&lt;/h3&gt;&lt;p&gt;原因：tensorrt版本大于等于7时，不再使用&lt;br&gt;
+解决方案：将&lt;code&gt;builder.fp16_mode = True&lt;/code&gt;替换成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;config = builder.create_builder_config()
+# use_fp16:
+config.set_flag(trt.BuilderFlag.FP16)
+# use_int8:
+config.set_flag(trt.BuilderFlag.INT8)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        <item>
+        <title>ubuntu系统下Samba安装与使用</title>
+        <link>https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+        <description>&lt;h3 id=&#34;安装&#34;&gt;安装
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;apt install samba&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;使用&#34;&gt;使用
+&lt;/h3&gt;&lt;h4 id=&#34;打开配置文件etcsambasmbconf在末尾添加如下信息使其能够映射到windows目录&#34;&gt;打开配置文件/etc/samba/smb.conf，在末尾添加如下信息，使其能够映射到windows目录
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut.jpg&#34;
+	width=&#34;230&#34;
+	height=&#34;148&#34;
+	srcset=&#34;https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut_hu18211409308899665998.jpg 480w, https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut_hu18269712106185599840.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;155&#34;
+		data-flex-basis=&#34;372px&#34;
+	
+&gt;&lt;br&gt;
+该配置中指明路径为/home/tqf，指定访问用户smbuser&lt;/p&gt;
+&lt;h4 id=&#34;添加访问用户&#34;&gt;添加访问用户
+&lt;/h4&gt;&lt;p&gt;&lt;code&gt;useradd smbuser -g test   # 将smbuser添加到test组&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;smbpasswd -a smbuser　   # 将smbuser添加到samba&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;重启samba使配置文件生效&#34;&gt;重启samba，使配置文件生效
+&lt;/h4&gt;&lt;p&gt;&lt;code&gt;systemctl restart smbd&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;常用命令&#34;&gt;常用命令
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;pdbedit -L    # 查看当前samba添加了哪些用户&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;pdbedit -xu smbuser   # 删除指定用户&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;常见问题&#34;&gt;常见问题
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2.jpg&#34;
+	width=&#34;669&#34;
+	height=&#34;246&#34;
+	srcset=&#34;https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2_hu5535969511923206826.jpg 480w, https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2_hu193820918895567559.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;271&#34;
+		data-flex-basis=&#34;652px&#34;
+	
+&gt;&lt;br&gt;
+如上图所示，如果windows突然无法访问samba服务器，报没有权限使用网络资源，需要联系这台服务器的管理员,按如下步骤解决：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;win key+R，输入“control userpasswords2”，打开“用户账户”&lt;/li&gt;
+&lt;li&gt;选择高级选项卡，选择密码管理&lt;/li&gt;
+&lt;li&gt;点击windows凭据&lt;/li&gt;
+&lt;li&gt;如果列表中已经存在该服务器地址，点击该地址修改。否则点击添加windows凭据，填写samba服务器地址和用户名密码&lt;/li&gt;
+&lt;li&gt;再次访问samba服务器地址，正常打开&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>ubuntu修改时区</title>
+        <link>https://example.com/p/ubuntu%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/</link>
+        <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/ubuntu%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/</guid>
+        <description>&lt;p&gt;新装的系统或者在拉取的docker镜像中,默认时区一般是美国时区,和我们相差8个小时,正常情况下需要将时区调整为东八区&lt;/p&gt;
+&lt;h3 id=&#34;一-查看当前系统时间&#34;&gt;一. 查看当前系统时间
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;date -R&lt;/code&gt;&lt;br&gt;
+结果时区是：-0500&lt;br&gt;
+我需要的是东八区，这儿显示不是，所以需要设置一个时区&lt;/p&gt;
+&lt;h3 id=&#34;二-运行tzselect&#34;&gt;二. 运行tzselect
+&lt;/h3&gt;&lt;p&gt;在这里我们选择亚洲 Asia，确认之后选择中国（China)，最后选择北京(Beijing)&lt;/p&gt;
+&lt;h3 id=&#34;三-复制文件到etc目录下&#34;&gt;三. 复制文件到/etc目录下
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;四-再次查看时间date--r已经修改为北京时间&#34;&gt;四. 再次查看时间date -R，已经修改为北京时间
+&lt;/h3&gt;</description>
+        </item>
+        
     </channel>
 </rss>

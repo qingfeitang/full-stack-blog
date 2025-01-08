@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Python on 汤庆飞-全栈技术博客</title>
+        <link>https://example.com/categories/python/</link>
+        <description>Recent content in Python on 汤庆飞-全栈技术博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>云视角科技有限公司</copyright>
+        <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>下载离线python包</title>
+        <link>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</link>
+        <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</guid>
+        <description>&lt;p&gt;要在离线机器上安装 Python 的第三方包，可以按照以下步骤在联网机器上下载所需的包及其依赖项，然后复制到离线机器上进行安装。&lt;/p&gt;
+&lt;h3 id=&#34;在联网机器上下载包&#34;&gt;在联网机器上下载包
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;创建一个新目录来存放下载的包：&lt;br&gt;
+&lt;code&gt;mkdir /path/to/packages&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;pip download 命令下载包及其依赖项。假设你要下载 requests 包：&lt;br&gt;
+&lt;code&gt;pip download requests -d /path/to/packages&lt;/code&gt;&lt;br&gt;
+这将下载 requests 及其所有依赖项到指定的目录 /path/to/packages。&lt;/li&gt;
+&lt;li&gt;如果你有多个包需要下载，可以将它们列在一个requirements.txt 文件中，然后使用以下命令:&lt;br&gt;
+&lt;code&gt;pip download -r requirements.txt -d /path/to/packages&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;将包拷贝到离线机器&#34;&gt;将包拷贝到离线机器
+&lt;/h3&gt;&lt;p&gt;使用 USB 闪存驱动器、外部硬盘或通过局域网共享文件夹将 /path/to/packages 目录拷贝到离线机器。&lt;/p&gt;
+&lt;h3 id=&#34;在离线机器上安装包&#34;&gt;在离线机器上安装包
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在离线机器上，打开命令行，进入包含下载包的目录：&lt;br&gt;
+&lt;code&gt;cd /path/to/packages&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用pip install 命令安装包：&lt;br&gt;
+&lt;code&gt;pip install --no-index --find-links=. requests&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果有多个包需要安装，可以使用以下命令：&lt;br&gt;
+&lt;code&gt;pip install --no-index --find-links=. -r requirements.txt&lt;/code&gt;&lt;br&gt;
+这将从本地目录中根据 requirements.txt 文件安装所有包。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;注意事项&#34;&gt;注意事项
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;确保联网机器和离线机器上的 Python 版本相同或兼容。&lt;/li&gt;
+&lt;li&gt;使用相同的操作系统版本（例如，Windows 和 Linux 的包可能不兼容）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样，你就可以在离线环境中安装 Python 的第三方包了。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

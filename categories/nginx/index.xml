@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Nginx on 汤庆飞-全栈技术博客</title>
+        <link>https://example.com/categories/nginx/</link>
+        <description>Recent content in Nginx on 汤庆飞-全栈技术博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>云视角科技有限公司</copyright>
+        <lastBuildDate>Tue, 15 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/nginx/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流</title>
+        <link>https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</link>
+        <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</guid>
+        <description>&lt;h3 id=&#34;一-服务器环境准备&#34;&gt;一. 服务器环境准备
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;CentOs:    CentOS Linux release 7.9.2009 (Core)&lt;br&gt;
+nginx：1.29&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;二-编译nginx所需的基础环境和下载nginx源码包&#34;&gt;二. 编译nginx所需的基础环境和下载nginx源码包
+&lt;/h3&gt;&lt;h4 id=&#34;安装基础环境&#34;&gt;安装基础环境
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;yum install gcc -y
+yum install pcre pcre-devel -y
+yum install openssl openssl-devel -y
+yum install wget -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;下载nginx和nginx-http-flv-module源码包&#34;&gt;下载nginx和nginx-http-flv-module源码包
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;mkdir -p /opt/backup/docker-build/nginx-flv/nginx-src
+cd /opt/backup/docker-build/nginx-flv/nginx-src
+wget http://nginx.org/download/nginx-1.27.2.tar.gz
+
+tar -zxf nginx-nginx-1.27.2.tar.gz
+git clone https://github.com/winshining/nginx-http-flv-module.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;编译安装完成后会安装在usrlocalnginx-flv-rtmp下&#34;&gt;编译安装，完成后会安装在/usr/local/nginx-flv-rtmp下
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;./configure --prefix=/usr/local/nginx-flv-rtmp --with-http_ssl_module --with-http_secure_link_module --add-module=nginx-http-flv-module
+make 
+make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果安装过程中出现库文件找不到的情况，网上搜索即可解决，如需要安装pcre2&lt;br&gt;
+&lt;code&gt;yum install pcre2&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;三-nginx配置&#34;&gt;三. nginx配置
+&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;#user  nobody;
+worker_processes  auto;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+error_log  logs/error.log warn;
+pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  10240;
+    use epoll;
+    multi_accept on;
+}
+
+
+rtmp {
+    server {
+        listen 1935;
+        chunk_size 4096;
+
+        application live {
+            live on;
+            record off;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;四-启动nginx服务&#34;&gt;四. 启动nginx服务
+&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;/usr/local/nginx-flv-rtmp/sbin/nginx -t
+/usr/local/nginx-flv-rtmp/sbin/nginx -c /usr/local/nginx-flv-rtmp/conf/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;五-测试推拉流&#34;&gt;五. 测试推拉流
+&lt;/h3&gt;&lt;h4 id=&#34;本地推流到服务器&#34;&gt;本地推流到服务器
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;ffmpeg -use_wallclock_as_timestamps 1 -rtsp_transport tcp -i &amp;quot;rtsp://admin:123456@192.168.1.108:554/cam/realmonitor?channel=1&amp;amp;subtype=0&amp;amp;unicast=true&amp;amp;proto=Onvif&amp;quot; -c:v copy -c:a aac -f flv rtmp://106.14.xx.xxx/live/stream
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;客户端vlc输入如下地址拉流&#34;&gt;客户端VLC输入如下地址拉流
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;rtmp://106.14.xx.xxx/live/stream
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
