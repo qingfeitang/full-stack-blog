@@ -78,7 +78,13 @@ fatal: unable to access &amp;lsquo;&lt;a class=&#34;link&#34; href=&#34;https://
 &lt;p&gt;以后使用相同的仓库时，Git 会自动填充用户名和密码，无需再次输入。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-</description>
+ &lt;script src=&#34;https://utteranc.es/client.js&#34;
+         repo=&#34;qingfeitang/full-stack-blog&#34;
+         issue-term=&#34;pathname&#34;
+         theme=&#34;github-light&#34;
+         crossorigin=&#34;anonymous&#34;
+         async&gt;
+ &lt;/script&gt;</description>
         </item>
         <item>
         <title>下载离线python包</title>
