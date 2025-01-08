@@ -242,6 +242,7 @@
     <li><a href="#git基本用法">git基本用法</a></li>
     <li><a href="#git配置全局代理">git配置全局代理</a></li>
     <li><a href="#清除或替换git旧凭据">清除或替换git旧凭据</a></li>
+    <li><a href="#自动保存git凭据">自动保存Git凭据</a></li>
   </ol>
 </nav>
         </div>
@@ -372,6 +373,20 @@ fatal: unable to access &lsquo;<a class="link" href="https://github.com/qingfeit
 <a class="link" href="https://github.com/settings/tokens"  target="_blank" rel="noopener"
     >GitHub 个人访问令牌管理页面</a></li>
 </ul>
+<h2 id="自动保存git凭据">自动保存Git凭据
+</h2><p>Git 自带一个凭据管理工具，可以将用户名和密码（或个人访问令牌）安全地存储在本地</p>
+<ol>
+<li>
+<p>确保 Git Credential Manager 已启用<br>
+<code>git config --global credential.helper manager</code></p>
+</li>
+<li>
+<p>执行 <code>git push</code> 时，首次输入用户名和密码后，Git Credential Manager 会将凭据保存下来。</p>
+</li>
+<li>
+<p>以后使用相同的仓库时，Git 会自动填充用户名和密码，无需再次输入。</p>
+</li>
+</ol>
 
 </section>
 
