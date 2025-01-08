@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>汤庆飞-全栈技术博客</title>
-        <link>https://example.com/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/</link>
         <description>Recent content on 汤庆飞-全栈技术博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>云视角科技有限公司</copyright>
-        <lastBuildDate>Wed, 08 Jan 2025 14:45:11 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Jan 2025 14:45:11 +0800</lastBuildDate><atom:link href="https://qingfeitang.github.io/full-stack-blog/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Git基础用法</title>
-        <link>https://example.com/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
         <pubDate>Wed, 08 Jan 2025 14:45:11 +0800</pubDate>
         
-        <guid>https://example.com/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
         <description>&lt;h2 id=&#34;git基本用法&#34;&gt;git基本用法
 &lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. git init                          创建本地仓库
 2. git add .                         把代码从代码区添加到暂存区
@@ -68,10 +68,10 @@ fatal: unable to access &amp;lsquo;&lt;a class=&#34;link&#34; href=&#34;https://
         </item>
         <item>
         <title>使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流</title>
-        <link>https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</link>
         <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/</guid>
         <description>&lt;h3 id=&#34;一-服务器环境准备&#34;&gt;一. 服务器环境准备
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;CentOs:    CentOS Linux release 7.9.2009 (Core)&lt;br&gt;
@@ -145,10 +145,10 @@ rtmp {
         </item>
         <item>
         <title>下载离线python包</title>
-        <link>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</link>
         <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</guid>
         <description>&lt;p&gt;要在离线机器上安装 Python 的第三方包，可以按照以下步骤在联网机器上下载所需的包及其依赖项，然后复制到离线机器上进行安装。&lt;/p&gt;
 &lt;h3 id=&#34;在联网机器上下载包&#34;&gt;在联网机器上下载包
 &lt;/h3&gt;&lt;ol&gt;
@@ -182,10 +182,10 @@ rtmp {
         </item>
         <item>
         <title>ubuntu安装包离线安装</title>
-        <link>https://example.com/p/ubuntu%E5%AE%89%E8%A3%85%E5%8C%85%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/ubuntu%E5%AE%89%E8%A3%85%E5%8C%85%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</link>
         <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/ubuntu%E5%AE%89%E8%A3%85%E5%8C%85%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/ubuntu%E5%AE%89%E8%A3%85%E5%8C%85%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</guid>
         <description>&lt;h3 id=&#34;保证联网机器和离线机器相同的操作系统&#34;&gt;保证联网机器和离线机器相同的操作系统
 &lt;/h3&gt;&lt;h3 id=&#34;在有网机器上下载离线安装包&#34;&gt;在有网机器上下载离线安装包
 &lt;/h3&gt;&lt;pre&gt;&lt;code&gt;apt-get download package_name  &amp;amp;&amp;amp; apt-cache depends -i package_name  | awk &#39;/Depends:/ {print $2}&#39; | xargs  apt-get download
@@ -198,11 +198,11 @@ rtmp {
         </item>
         <item>
         <title>基于Python实现的T-SNE(T-分布随机邻嵌入)算法</title>
-        <link>https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</link>
         <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</guid>
-        <description>&lt;img src="https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut.jpg" alt="Featured image of post 基于Python实现的T-SNE(T-分布随机邻嵌入)算法" /&gt;&lt;p&gt;tsne(t-分布随机邻嵌入)是基于Python实现的降维算法，用于高维数据的可视化技术，将高维数据映射到低维空间（通常是二维或三维）以便于观察。&lt;br&gt;
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</guid>
+        <description>&lt;img src="https://qingfeitang.github.io/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut.jpg" alt="Featured image of post 基于Python实现的T-SNE(T-分布随机邻嵌入)算法" /&gt;&lt;p&gt;tsne(t-分布随机邻嵌入)是基于Python实现的降维算法，用于高维数据的可视化技术，将高维数据映射到低维空间（通常是二维或三维）以便于观察。&lt;br&gt;
 本文将对tsne代码进行讲解，获取源码请点击：&lt;a class=&#34;link&#34; href=&#34;https://github.com/qingfeitang/tsne.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/qingfeitang/tsne.git&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;功能&#34;&gt;功能
@@ -270,10 +270,10 @@ P = P * 4.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;实践分析&#34;&gt;实践分析
 &lt;/h3&gt;&lt;p&gt;基于火灾数据集我们训练了3个分类模型，并在2000条测试集上面通过tsne算法做了可视化展示，效果如下：&lt;br&gt;
-&lt;img src=&#34;https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2.jpg&#34;
+&lt;img src=&#34;https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2.jpg&#34;
 	width=&#34;1466&#34;
 	height=&#34;743&#34;
-	srcset=&#34;https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu2207856159236137155.jpg 480w, https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu4078315072322567694.jpg 1024w&#34;
+	srcset=&#34;https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu2207856159236137155.jpg 480w, https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu4078315072322567694.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;tsne可视化效果图&#34;
@@ -292,10 +292,10 @@ P = P * 4.
         </item>
         <item>
         <title>ubuntu挂载windows目录</title>
-        <link>https://example.com/p/ubuntu%E6%8C%82%E8%BD%BDwindows%E7%9B%AE%E5%BD%95/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/ubuntu%E6%8C%82%E8%BD%BDwindows%E7%9B%AE%E5%BD%95/</link>
         <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/ubuntu%E6%8C%82%E8%BD%BDwindows%E7%9B%AE%E5%BD%95/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/ubuntu%E6%8C%82%E8%BD%BDwindows%E7%9B%AE%E5%BD%95/</guid>
         <description>&lt;p&gt;需求：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;有些文件存在于windows目录下，文件较大不方便复制，但需要ubuntu系统操作&lt;/li&gt;
@@ -331,10 +331,10 @@ service 是windows的共享目录&lt;br&gt;
         </item>
         <item>
         <title>Pycuda安装</title>
-        <link>https://example.com/p/pycuda%E5%AE%89%E8%A3%85/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/pycuda%E5%AE%89%E8%A3%85/</link>
         <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/pycuda%E5%AE%89%E8%A3%85/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/pycuda%E5%AE%89%E8%A3%85/</guid>
         <description>&lt;h3 id=&#34;安装参考httpsblogcsdnnetweixin_34910922articledetails117451337ops_request_misc257b2522request255fid2522253a25221692261698167772244101902522252c2522scm2522253a2522201407131301023342522257drequest_id169226169816777224410190biz_id0utm_mediumdistributepc_search_resultnone-task-blog-2allsobaiduenddefault-1-117451337-null-null142v93chatsearcht3_2utm_term20warning3a20nvcc20not20in20path2020may20need20to20set20cuda_inc_dir20for20installation20to20succeedspm1018222630014187&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_34910922/article/details/117451337?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169226169816777224410190%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;amp;request_id=169226169816777224410190&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-117451337-null-null.142%5ev93%5echatsearchT3_2&amp;amp;utm_term=%20WARNING%3A%20nvcc%20not%20in%20path.%20%20May%20need%20to%20set%20CUDA_INC_DIR%20for%20installation%20to%20succeed.&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;安装参考&lt;/a&gt;
 &lt;/h3&gt;&lt;h3 id=&#34;安装前环境配置&#34;&gt;安装前环境配置
@@ -355,10 +355,10 @@ service 是windows的共享目录&lt;br&gt;
         </item>
         <item>
         <title>解决Ubuntu系统下nvidia-smi has failed的问题</title>
-        <link>https://example.com/p/%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bnvidia-smi-has-failed%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bnvidia-smi-has-failed%E7%9A%84%E9%97%AE%E9%A2%98/</link>
         <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bnvidia-smi-has-failed%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/%E8%A7%A3%E5%86%B3ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bnvidia-smi-has-failed%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h3 id=&#34;安装dkms&#34;&gt;安装dkms
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;apt install dkms&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;查看nvidia驱动版本&#34;&gt;查看nvidia驱动版本:
@@ -369,11 +369,11 @@ service 是windows的共享目录&lt;br&gt;
         </item>
         <item>
         <title>tensorrt使用过程中可能碰到的问题</title>
-        <link>https://example.com/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
         <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-        <description>&lt;img src="https://example.com/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/how-it-works-inference.svg" alt="Featured image of post tensorrt使用过程中可能碰到的问题" /&gt;&lt;h3 id=&#34;问题1attributeerror-tensorrttensorrtbuilder-object-has-no-attribute-build_cuda_engine&#34;&gt;问题1：AttributeError: ‘tensorrt.tensorrt.Builder‘ object has no attribute ‘build_cuda_engine‘
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;img src="https://qingfeitang.github.io/full-stack-blog/p/tensorrt%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/how-it-works-inference.svg" alt="Featured image of post tensorrt使用过程中可能碰到的问题" /&gt;&lt;h3 id=&#34;问题1attributeerror-tensorrttensorrtbuilder-object-has-no-attribute-build_cuda_engine&#34;&gt;问题1：AttributeError: ‘tensorrt.tensorrt.Builder‘ object has no attribute ‘build_cuda_engine‘
 &lt;/h3&gt;&lt;p&gt;原因：tensorrt版本大于等于7时，不再使用build_cuda_engine&lt;br&gt;
 解决方案： 将&lt;code&gt;engine = builder.build_cuda_engine(network)&lt;/code&gt;替换成&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;profile = builder.create_optimization_profile()
@@ -400,18 +400,18 @@ config.set_flag(trt.BuilderFlag.INT8)
         </item>
         <item>
         <title>ubuntu系统下Samba安装与使用</title>
-        <link>https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
         <description>&lt;h3 id=&#34;安装&#34;&gt;安装
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;apt install samba&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;使用&#34;&gt;使用
 &lt;/h3&gt;&lt;h4 id=&#34;打开配置文件etcsambasmbconf在末尾添加如下信息使其能够映射到windows目录&#34;&gt;打开配置文件/etc/samba/smb.conf，在末尾添加如下信息，使其能够映射到windows目录
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut.jpg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut.jpg&#34;
 	width=&#34;230&#34;
 	height=&#34;148&#34;
-	srcset=&#34;https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut_hu18211409308899665998.jpg 480w, https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut_hu18269712106185599840.jpg 1024w&#34;
+	srcset=&#34;https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut_hu18211409308899665998.jpg 480w, https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut_hu18269712106185599840.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -430,10 +430,10 @@ config.set_flag(trt.BuilderFlag.INT8)
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;pdbedit -L    # 查看当前samba添加了哪些用户&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;pdbedit -xu smbuser   # 删除指定用户&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;常见问题&#34;&gt;常见问题
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2.jpg&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2.jpg&#34;
 	width=&#34;669&#34;
 	height=&#34;246&#34;
-	srcset=&#34;https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2_hu5535969511923206826.jpg 480w, https://example.com/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2_hu193820918895567559.jpg 1024w&#34;
+	srcset=&#34;https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2_hu5535969511923206826.jpg 480w, https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8Bsamba%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/shortcut2_hu193820918895567559.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -454,10 +454,10 @@ config.set_flag(trt.BuilderFlag.INT8)
         </item>
         <item>
         <title>ubuntu修改时区</title>
-        <link>https://example.com/p/ubuntu%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/ubuntu%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/</link>
         <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/ubuntu%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/ubuntu%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/</guid>
         <description>&lt;p&gt;新装的系统或者在拉取的docker镜像中,默认时区一般是美国时区,和我们相差8个小时,正常情况下需要将时区调整为东八区&lt;/p&gt;
 &lt;h3 id=&#34;一-查看当前系统时间&#34;&gt;一. 查看当前系统时间
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;date -R&lt;/code&gt;&lt;br&gt;
@@ -472,18 +472,18 @@ config.set_flag(trt.BuilderFlag.INT8)
         </item>
         <item>
         <title>Archives</title>
-        <link>https://example.com/archives/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/archives/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Links</title>
-        <link>https://example.com/links/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/links/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/links/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -515,18 +515,18 @@ config.set_flag(trt.BuilderFlag.INT8)
         </item>
         <item>
         <title>Search</title>
-        <link>https://example.com/search/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/search/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/search/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>https://example.com/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
 </description>
         </item>

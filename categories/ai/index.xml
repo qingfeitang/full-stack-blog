@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>AI on 汤庆飞-全栈技术博客</title>
-        <link>https://example.com/categories/ai/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/categories/ai/</link>
         <description>Recent content in AI on 汤庆飞-全栈技术博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>云视角科技有限公司</copyright>
-        <lastBuildDate>Sat, 18 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 18 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://qingfeitang.github.io/full-stack-blog/categories/ai/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>基于Python实现的T-SNE(T-分布随机邻嵌入)算法</title>
-        <link>https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</link>
         <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</guid>
-        <description>&lt;img src="https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut.jpg" alt="Featured image of post 基于Python实现的T-SNE(T-分布随机邻嵌入)算法" /&gt;&lt;p&gt;tsne(t-分布随机邻嵌入)是基于Python实现的降维算法，用于高维数据的可视化技术，将高维数据映射到低维空间（通常是二维或三维）以便于观察。&lt;br&gt;
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/</guid>
+        <description>&lt;img src="https://qingfeitang.github.io/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut.jpg" alt="Featured image of post 基于Python实现的T-SNE(T-分布随机邻嵌入)算法" /&gt;&lt;p&gt;tsne(t-分布随机邻嵌入)是基于Python实现的降维算法，用于高维数据的可视化技术，将高维数据映射到低维空间（通常是二维或三维）以便于观察。&lt;br&gt;
 本文将对tsne代码进行讲解，获取源码请点击：&lt;a class=&#34;link&#34; href=&#34;https://github.com/qingfeitang/tsne.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/qingfeitang/tsne.git&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;功能&#34;&gt;功能
@@ -81,10 +81,10 @@ P = P * 4.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;实践分析&#34;&gt;实践分析
 &lt;/h3&gt;&lt;p&gt;基于火灾数据集我们训练了3个分类模型，并在2000条测试集上面通过tsne算法做了可视化展示，效果如下：&lt;br&gt;
-&lt;img src=&#34;https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2.jpg&#34;
+&lt;img src=&#34;https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2.jpg&#34;
 	width=&#34;1466&#34;
 	height=&#34;743&#34;
-	srcset=&#34;https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu2207856159236137155.jpg 480w, https://example.com/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu4078315072322567694.jpg 1024w&#34;
+	srcset=&#34;https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu2207856159236137155.jpg 480w, https://qingfeitang.github.io/full-stack-blog/full-stack-blog/p/%E5%9F%BA%E4%BA%8Epython%E5%AE%9E%E7%8E%B0%E7%9A%84t-snet-%E5%88%86%E5%B8%83%E9%9A%8F%E6%9C%BA%E9%82%BB%E5%B5%8C%E5%85%A5%E7%AE%97%E6%B3%95/shortcut2_hu4078315072322567694.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;tsne可视化效果图&#34;

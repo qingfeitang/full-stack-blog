@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一. 服务器环境准备 CentOs: CentOS Linux release 7.9.2009 (Core)\nnginx：1.29\n二. 编译nginx所需的基础环境和下载nginx源码包 安装基础环境 yum install gcc -y yum install pcre pcre-devel -y yum install openssl openssl-devel -y yum install wget -y 下载nginx和nginx-http-flv-module源码包 mkdir -p /opt/backup/docker-build/nginx-flv/nginx-src cd /opt/backup/docker-build/nginx-flv/nginx-src wget http://nginx.org/download/nginx-1.27.2.tar.gz tar -zxf nginx-nginx-1.27.2.tar.gz git clone https://github.com/winshining/nginx-http-flv-module.git 编译安装，完成后会安装在/usr/local/nginx-flv-rtmp下 ./configure --prefix=/usr/local/nginx-flv-rtmp --with-http_ssl_module --with-http_secure_link_module --add-module=nginx-http-flv-module make make install 如果安装过程中出现库文件找不到的情况，网上搜索即可解决，如需要安装pcre2\nyum install pcre2\n">
 <title>使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流</title>
 
-<link rel='canonical' href='https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/'>
+<link rel='canonical' href='https://qingfeitang.github.io/full-stack-blog/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流">
+<link rel="stylesheet" href="/full-stack-blog/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流">
 <meta property='og:description' content="一. 服务器环境准备 CentOs: CentOS Linux release 7.9.2009 (Core)\nnginx：1.29\n二. 编译nginx所需的基础环境和下载nginx源码包 安装基础环境 yum install gcc -y yum install pcre pcre-devel -y yum install openssl openssl-devel -y yum install wget -y 下载nginx和nginx-http-flv-module源码包 mkdir -p /opt/backup/docker-build/nginx-flv/nginx-src cd /opt/backup/docker-build/nginx-flv/nginx-src wget http://nginx.org/download/nginx-1.27.2.tar.gz tar -zxf nginx-nginx-1.27.2.tar.gz git clone https://github.com/winshining/nginx-http-flv-module.git 编译安装，完成后会安装在/usr/local/nginx-flv-rtmp下 ./configure --prefix=/usr/local/nginx-flv-rtmp --with-http_ssl_module --with-http_secure_link_module --add-module=nginx-http-flv-module make make install 如果安装过程中出现库文件找不到的情况，网上搜索即可解决，如需要安装pcre2\nyum install pcre2\n">
-<meta property='og:url' content='https://example.com/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/'>
+<meta property='og:url' content='https://qingfeitang.github.io/full-stack-blog/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/'>
 <meta property='og:site_name' content='汤庆飞-全栈技术博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-15T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流">
@@ -52,13 +52,13 @@
         
             
             <figure class="site-avatar">
-                <a href="/">
+                <a href="/full-stack-blog/">
                 
                     
                     
                     
                         
-                        <img src="/img/avatar_hu12475922250769895429.png" width="300"
+                        <img src="/full-stack-blog/img/avatar_hu12475922250769895429.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -69,7 +69,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">汤庆飞-全栈技术博客</a></h1>
+            <h1 class="site-name"><a href="/full-stack-blog">汤庆飞-全栈技术博客</a></h1>
             <h2 class="site-description">欢迎来到我的网站</h2>
         </div>
     </header><ol class="menu-social">
@@ -93,7 +93,7 @@
         
         
         <li >
-            <a href='/' >
+            <a href='/full-stack-blog/' >
                 
                 
                 
@@ -113,7 +113,7 @@
         
         
         <li >
-            <a href='/%E5%85%B3%E4%BA%8E/' >
+            <a href='/full-stack-blog/%E5%85%B3%E4%BA%8E/' >
                 
                 
                 
@@ -132,7 +132,7 @@
         
         
         <li >
-            <a href='/archives/' >
+            <a href='/full-stack-blog/archives/' >
                 
                 
                 
@@ -152,7 +152,7 @@
         
         
         <li >
-            <a href='/search/' >
+            <a href='/full-stack-blog/search/' >
                 
                 
                 
@@ -171,7 +171,7 @@
         
         
         <li >
-            <a href='/links/' >
+            <a href='/full-stack-blog/links/' >
                 
                 
                 
@@ -277,11 +277,11 @@
     
     <header class="article-category">
         
-            <a href="/categories/nginx/" >
+            <a href="/full-stack-blog/categories/nginx/" >
                 Nginx
             </a>
         
-            <a href="/categories/%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" >
+            <a href="/full-stack-blog/categories/%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" >
                 流媒体服务器
             </a>
         
@@ -290,7 +290,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/">使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流</a>
+            <a href="/full-stack-blog/p/%E4%BD%BF%E7%94%A8nginx%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8-rtsp%E6%8E%A8%E6%B5%81%E5%92%8Crtmp%E6%8B%89%E6%B5%81/">使用nginx搭建流媒体服务器-rtsp推流和rtmp拉流</a>
         </h2>
     
         
@@ -579,7 +579,7 @@ rtmp {
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/full-stack-blog/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

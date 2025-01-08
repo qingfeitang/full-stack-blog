@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Python on 汤庆飞-全栈技术博客</title>
-        <link>https://example.com/categories/python/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/categories/python/</link>
         <description>Recent content in Python on 汤庆飞-全栈技术博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>云视角科技有限公司</copyright>
-        <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://qingfeitang.github.io/full-stack-blog/categories/python/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>下载离线python包</title>
-        <link>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</link>
         <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</guid>
+        <guid>https://qingfeitang.github.io/full-stack-blog/p/%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BFpython%E5%8C%85/</guid>
         <description>&lt;p&gt;要在离线机器上安装 Python 的第三方包，可以按照以下步骤在联网机器上下载所需的包及其依赖项，然后复制到离线机器上进行安装。&lt;/p&gt;
 &lt;h3 id=&#34;在联网机器上下载包&#34;&gt;在联网机器上下载包
 &lt;/h3&gt;&lt;ol&gt;

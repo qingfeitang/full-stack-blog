@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on 汤庆飞-全栈技术博客</title>
-        <link>https://example.com/tags/</link>
+        <link>https://qingfeitang.github.io/full-stack-blog/tags/</link>
         <description>Recent content in Tags on 汤庆飞-全栈技术博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>云视角科技有限公司</copyright><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>云视角科技有限公司</copyright><atom:link href="https://qingfeitang.github.io/full-stack-blog/tags/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
